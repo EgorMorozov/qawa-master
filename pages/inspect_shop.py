@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from utilities.loggers import log_message
 
 
-class Init_Page(BasePage):
+class Inspect_shop(BasePage):
     enter_store_name_field = (By.XPATH, "//form/input[@data-testid='store-name-input']")
     enter_password_field = (By.XPATH, "//form/input[@data-testid='password-input']")
     login_to_store_button = (By.XPATH, "//form/button[@data-testid='login-button']")
@@ -18,6 +18,13 @@ class Init_Page(BasePage):
         'delete_message': "User deleted!",
         'user_exist': "User already exists"
     }
+
+    # Created for exercise in the part2/test6. Useless, because I already have manipulate_user method that do the same
+    # and allow me to use any combination I want to use (input fields + any button)
+    def login(self, username, password):
+        self.enter_store_name(username)
+        self.enter_password(password)
+        self.press_button(self.login_to_store_button)
 
     def manipulate_user(self, username, password, button_name):
         self.enter_store_name(username)
