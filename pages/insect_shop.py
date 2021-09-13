@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from utilities.loggers import log_message
 
 
-class Inspect_shop(BasePage):
+class Insect_shop(BasePage):
     enter_store_name_field = (By.XPATH, "//form/input[@data-testid='store-name-input']")
     enter_password_field = (By.XPATH, "//form/input[@data-testid='password-input']")
     login_to_store_button = (By.XPATH, "//form/button[@data-testid='login-button']")
