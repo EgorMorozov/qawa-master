@@ -4,10 +4,8 @@ from pages.insect_shop import Insect_shop
 from pages.shop_page import Shop_page
 from Services.ramdomizer import Randomizer
 from common import test_data
-from utilities import config
 
-
-class Infinum_inspect_shop2(BaseTest):
+class Infinum_insect_shop2(BaseTest):
 
     def setUp(self):
         super().setUp()
@@ -27,7 +25,7 @@ class Infinum_inspect_shop2(BaseTest):
                          self.insect_shop.get_message_text(), "Actual message is different from expected")
 
         log_message("Clearing up test data")
-        self.insect_shop.manipulate_user(username, password, self.insect_shop.delete_accout_button)
+        self.insect_shop.manipulate_user(username, password, self.insect_shop.delete_account_button)
 
     def test_delete_account_with_wrong_password(self):
         log_message("Registering a new user")
@@ -39,12 +37,12 @@ class Infinum_inspect_shop2(BaseTest):
 
         for i in range(5):
             self.insect_shop.manipulate_user(username, Randomizer.get_password(),
-                                             self.insect_shop.delete_accout_button)
+                                             self.insect_shop.delete_account_button)
             self.assertEqual(self.insect_shop.messages_types.get('invalid_credentials'),
                              self.insect_shop.get_message_text(), "Actual message is different from expected")
 
         log_message("Clearing up test data")
-        self.insect_shop.manipulate_user(username, password, self.insect_shop.delete_accout_button)
+        self.insect_shop.manipulate_user(username, password, self.insect_shop.delete_account_button)
 
     def test_login(self):
 

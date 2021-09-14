@@ -26,7 +26,7 @@ class Infinum_inspect_shop(BaseTest):
                          self.insect_shop.get_message_text(), "Actual message is different from expected")
 
         log_message("Clearing up test data")
-        self.insect_shop.manipulate_user(username, password, self.insect_shop.delete_accout_button)
+        self.insect_shop.manipulate_user(username, password, self.insect_shop.delete_account_button)
 
     def test_register_without_store_name(self):
         log_message("Create test credentials")
@@ -71,4 +71,4 @@ class Infinum_inspect_shop(BaseTest):
                          "Actual message is different from expected")
 
         log_message("Clearing up test data")
-        self.insect_shop.manipulate_user(username, password, self.insect_shop.delete_accout_button)
+        self.insect_shop.manipulate_user(username, password, self.insect_shop.delete_account_button)

@@ -8,7 +8,7 @@ class Insect_shop(BasePage):
     enter_password_field = (By.XPATH, "//form/input[@data-testid='password-input']")
     login_to_store_button = (By.XPATH, "//form/button[@data-testid='login-button']")
     register_button = (By.XPATH, "//form/button[@data-testid='register-button']")
-    delete_accout_button = (By.XPATH, "//form/button[@data-testid='delete-button']")
+    delete_account_button = (By.XPATH, "//form/button[@data-testid='delete-button']")
     message = (By.XPATH, "//p[@data-testid='message']")
 
     messages_types = {
@@ -44,8 +44,8 @@ class Insect_shop(BasePage):
             self.get_present_element(self.login_to_store_button).click()
         elif button_name == self.register_button:
             self.get_present_element(self.register_button).click()
-        elif button_name == self.delete_accout_button:
-            self.get_present_element(self.delete_accout_button).click()
+        elif button_name == self.delete_account_button:
+            self.get_present_element(self.delete_account_button).click()
         else:
             log_message("Unexpected button, please double-check the button name")
 
